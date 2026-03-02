@@ -1,0 +1,423 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazee Textile | Premium Fabrics & Luxury Fashion</title>
+    <meta name="description" content="Premium Fabrics & Luxury Fashion in Sokoto. Shoes, Shadda, Yadi, Ready-Made, and Caps.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: '#001F3F', // Deep Royal Blue
+                        gold: '#D4AF37',  // Premium Gold
+                        goldHover: '#b5952f', // Darker Gold for hover
+                        light: '#F8F9FA'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b5952f;
+        }
+
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Image overlay gradient */
+        .hero-overlay {
+            background: linear-gradient(rgba(0, 31, 63, 0.85), rgba(0, 31, 63, 0.7));
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased selection:bg-gold selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-royal/95 backdrop-blur-sm shadow-lg border-b border-gold/20 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-serif text-2xl font-bold text-gold tracking-wider uppercase">
+                        Nazee<span class="text-white text-xl ml-1">Textile</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-white hover:text-gold transition-colors text-sm font-medium tracking-wide">Home</a>
+                    <a href="#products" class="text-white hover:text-gold transition-colors text-sm font-medium tracking-wide">Collections</a>
+                    <a href="#ceo" class="text-white hover:text-gold transition-colors text-sm font-medium tracking-wide">About</a>
+                    <a href="#location" class="text-white hover:text-gold transition-colors text-sm font-medium tracking-wide">Location</a>
+                    <a href="#contact" class="px-5 py-2 border-2 border-gold text-gold hover:bg-gold hover:text-royal transition-all duration-300 font-medium rounded-sm">Contact Us</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-gold focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-royal border-t border-gold/20 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-white hover:text-gold font-medium">Home</a>
+                <a href="#products" class="block px-3 py-2 text-white hover:text-gold font-medium">Collections</a>
+                <a href="#ceo" class="block px-3 py-2 text-white hover:text-gold font-medium">About</a>
+                <a href="#location" class="block px-3 py-2 text-white hover:text-gold font-medium">Location</a>
+                <a href="#contact" class="block px-3 py-2 text-gold font-medium">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://lh3.googleusercontent.com/d/1t66nxY6PxbYj3QqGJ8z_eAyK6qjGK0sG=w1600" alt="Luxury Fabrics" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto reveal">
+            <span class="text-gold font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-4 block">Welcome to Excellence</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6">
+                Premium Fabrics & <br/> Luxury Fashion in Sokoto
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-10 font-light tracking-wide">
+                Shoes &bull; Shadda &bull; Yadi &bull; Ready-Made &bull; Caps
+            </p>
+            <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile%2C%20I%20want%20to%20make%20an%20order" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-royal bg-gold hover:bg-goldHover transition-all duration-300 rounded-sm shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transform hover:-translate-y-1">
+                <i class="fab fa-whatsapp text-xl mr-2"></i> Shop Now on WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section id="products" class="py-24 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-royal mb-4">Our Premium Collection</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">Discover our curated selection of high-quality fabrics, traditional wear, and accessories designed for the modern trendsetter.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Product 1: Shoes -->
+                <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1orPJ66Rn99FJDazVR203LzofdHcdIuX4=w800" onerror="this.src='https://images.unsplash.com/photo-1614252339460-e1ca407945d8?auto=format&fit=crop&w=800&q=80'" alt="Premium Shoes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-royal/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-8 text-center border-t border-gray-100">
+                        <h3 class="text-2xl font-serif font-bold text-royal mb-2">Luxury Shoes</h3>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-2">Step out in style with our collection of premium, handcrafted footwear perfect for any occasion.</p>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Shoes" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Shadda -->
+                <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 100ms;">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/14L8KTq05pZFAhlBHfvFgS2lzEKiIXdEM=w800" onerror="this.src='https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80'" alt="Premium Shadda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-royal/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-8 text-center border-t border-gray-100">
+                        <h3 class="text-2xl font-serif font-bold text-royal mb-2">Original Shadda</h3>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-2">High-quality brocade fabric with elegant patterns, guaranteed to give you that royal look.</p>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Shadda" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Premium Textiles -->
+                <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 200ms;">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1t66nxY6PxbYj3QqGJ8z_eAyK6qjGK0sG=w800" onerror="this.src='https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80'" alt="Premium Textile Fabrics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-royal/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-8 text-center border-t border-gray-100">
+                        <h3 class="text-2xl font-serif font-bold text-royal mb-2">Premium Textiles</h3>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-2">Beautiful, durable, and vibrant fabrics available in various textures and striking colors.</p>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Fabrics" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Ready Made -->
+                <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 300ms;">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/16ZTnzCmz4Ld5pNll3shUTI0VFzkYZQCB=w800" onerror="this.src='https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80'" alt="Ready Made Attire" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-royal/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-8 text-center border-t border-gray-100">
+                        <h3 class="text-2xl font-serif font-bold text-royal mb-2">Ready-Made</h3>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-2">Exquisitely tailored traditional and modern wear, ready to be worn for your special events.</p>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Ready-Made%20Attire" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5: Caps -->
+                <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 400ms;">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/12ijONCcx4R9sGkMKtIM7P7LzqFN_If1S=w800" onerror="this.src='https://images.unsplash.com/photo-1556306535-0f09a536f01f?auto=format&fit=crop&w=800&q=80'" alt="Traditional Caps" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-royal/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-8 text-center border-t border-gray-100">
+                        <h3 class="text-2xl font-serif font-bold text-royal mb-2">Designer Caps</h3>
+                        <p class="text-gray-600 mb-6 text-sm line-clamp-2">Complete your attire with our exclusively embroidered and perfectly fitted traditional caps.</p>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Caps" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
+                            Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CEO SECTION -->
+    <section id="ceo" class="py-24 bg-white relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-royal/5 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image side -->
+                <div class="w-full lg:w-1/2 reveal">
+                    <div class="relative group">
+                        <!-- Gold Border Frame -->
+                        <div class="absolute inset-0 border-4 border-gold translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
+                        <!-- CEO Image -->
+                        <div class="relative z-10 overflow-hidden shadow-2xl">
+                             <img src="https://lh3.googleusercontent.com/d/1_WNaEth7NlXKu8oN7vQgBn_CynT_9jhO=w1000" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'" alt="Naziru Almustapha - CEO" class="w-full object-cover h-[600px] transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                    </div>
+                </div>
+                <!-- Text side -->
+                <div class="w-full lg:w-1/2 reveal" style="transition-delay: 200ms;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-[1px] w-12 bg-gold"></div>
+                        <span class="text-gold font-bold uppercase tracking-widest text-sm">Leadership</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-royal mb-6">Meet the Visionary</h2>
+                    <i class="fas fa-quote-left text-4xl text-gold/30 mb-4 block"></i>
+                    <p class="text-xl md:text-2xl text-gray-700 font-serif italic mb-8 leading-relaxed">
+                        "Led by Naziru Almustapha, Nazee Textile is committed to providing premium fabrics and quality fashion with trust, style, and excellence."
+                    </p>
+                    <div class="border-l-4 border-gold pl-6">
+                        <h4 class="text-2xl font-bold text-royal uppercase tracking-tight">Naziru Almustapha</h4>
+                        <p class="text-gold font-medium tracking-wide">CEO & Founder, Nazee Textile</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section id="location" class="py-24 bg-royal text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Visit Our Store</h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto">Experience the luxury of our fabrics firsthand at our flagship location.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10 bg-white/5 rounded-sm border border-white/10 p-2 md:p-4 reveal">
+                <!-- Text Info -->
+                <div class="w-full lg:w-1/3 p-8 flex flex-col justify-center bg-royal border border-gold/20">
+                    <div class="mb-8">
+                        <div class="w-12 h-12 bg-gold/20 flex items-center justify-center rounded-full mb-4 text-gold text-xl">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Address</h3>
+                        <p class="text-gray-300 leading-relaxed">Near Mai Kilishi Mosque<br>Talba Mall Shop No 2<br>Sokoto State, Nigeria</p>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-gold/20 flex items-center justify-center rounded-full mb-4 text-gold text-xl">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Opening Hours</h3>
+                        <p class="text-gray-300 uppercase tracking-wide font-medium">Open 10am &bull; Close 10pm<br>Available 24/7</p>
+                    </div>
+                </div>
+                <!-- Map Placeholder -->
+                <div class="w-full lg:w-2/3 h-[400px] bg-gray-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125439.54419957241!2d5.155700723849313!3d13.047053559389278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11b212f4c34a1a31%3A0x6b83f3e827b4097f!2sSokoto%2C%20Nigeria!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-royal mb-4">Get In Touch</h2>
+            <div class="w-24 h-1 bg-gold mx-auto mb-10"></div>
+            <p class="text-gray-600 mb-12 text-lg">Have a question or ready to make a premium order? Reach out to us directly through any of the channels below.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Call -->
+                <a href="tel:+2348131502255" class="group bg-white p-8 border border-gray-200 hover:border-gold shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto bg-royal text-gold flex items-center justify-center rounded-full text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-royal mb-2">Call Us</h3>
+                    <p class="text-gray-600 font-medium">+234 813 150 2255</p>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/2348131502255" target="_blank" class="group bg-white p-8 border border-gray-200 hover:border-[#25D366] shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto bg-[#25D366] text-white flex items-center justify-center rounded-full text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#25D366]/30">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-bold text-royal mb-2">WhatsApp</h3>
+                    <p class="text-gray-600 font-medium">Chat with us instantly</p>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/nazee__textile" target="_blank" class="group bg-white p-8 border border-gray-200 hover:border-[#E1306C] shadow-sm hover:shadow-md transition-all duration-300">
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-tr from-[#F56040] via-[#E1306C] to-[#833AB4] text-white flex items-center justify-center rounded-full text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 class="font-bold text-royal mb-2">Instagram</h3>
+                    <p class="text-gray-600 font-medium">@nazee__textile</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-royal text-center py-12 border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="font-serif text-3xl font-bold text-gold tracking-wider uppercase mb-6">
+                Nazee<span class="text-white text-2xl ml-1">Textile</span>
+            </h2>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.instagram.com/nazee__textile" target="_blank" class="text-gray-400 hover:text-gold transition-colors text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/2348131502255" target="_blank" class="text-gray-400 hover:text-gold transition-colors text-2xl">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="tel:+2348131502255" class="text-gray-400 hover:text-gold transition-colors text-2xl">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+
+            <div class="w-32 h-[1px] bg-gold mx-auto mb-6"></div>
+            
+            <div class="text-gray-400 font-light text-sm tracking-wide space-y-2">
+                <p>Nazee Textile &copy; 2026. All Rights Reserved.</p>
+                <p class="text-xs opacity-60">Dev by sirajo x 08140905040</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/2348131502255" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:bg-[#20bd5a] hover:scale-110 transition-all duration-300 animate-bounce cursor-pointer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // threshold
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+
+        // Navbar background on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-royal/95', 'bg-royal');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-royal', 'bg-royal/95');
+            }
+        });
+    </script>
+</body>
+</html>
+
