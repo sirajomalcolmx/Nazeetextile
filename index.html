@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,9 +21,9 @@
             theme: {
                 extend: {
                     colors: {
-                        royal: '#001F3F', // Deep Royal Blue
-                        gold: '#D4AF37',  // Premium Gold
-                        goldHover: '#b5952f', // Darker Gold for hover
+                        royal: '#001F3F',
+                        gold: '#D4AF37',
+                        goldHover: '#b5952f',
                         light: '#F8F9FA'
                     },
                     fontFamily: {
@@ -36,21 +36,11 @@
     </script>
 
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D4AF37;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #b5952f;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #D4AF37; }
+        ::-webkit-scrollbar-thumb:hover { background: #b5952f; }
 
-        /* Scroll Animation Classes */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -60,11 +50,168 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Image overlay gradient */
         .hero-overlay {
             background: linear-gradient(rgba(0, 31, 63, 0.85), rgba(0, 31, 63, 0.7));
         }
+
+        /* ── FOOTER STYLES ── */
+        .site-footer {
+            background: linear-gradient(135deg, #0a0a0a 0%, #0d1a10 40%, #0a0f1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent 0%, #D4AF37 30%, #f0d060 50%, #D4AF37 70%, transparent 100%);
+        }
+        /* Subtle background texture */
+        .site-footer::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 80%, rgba(212,175,55,0.04) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(0,31,63,0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 1;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2.5rem;
+        }
+
+        /* Corner ornaments */
+        .footer-frame {
+            position: relative;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(212,175,55,0.15);
+        }
+        .foot-corner {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+        }
+        .foot-corner-tl { top: -1px; left: -1px; border-top: 2px solid #D4AF37; border-left: 2px solid #D4AF37; border-radius: 2px 0 0 0; }
+        .foot-corner-tr { top: -1px; right: -1px; border-top: 2px solid #D4AF37; border-right: 2px solid #D4AF37; border-radius: 0 2px 0 0; }
+        .foot-corner-bl { bottom: -1px; left: -1px; border-bottom: 2px solid #D4AF37; border-left: 2px solid #D4AF37; border-radius: 0 0 0 2px; }
+        .foot-corner-br { bottom: -1px; right: -1px; border-bottom: 2px solid #D4AF37; border-right: 2px solid #D4AF37; border-radius: 0 0 2px 0; }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: #D4AF37;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 1.4rem;
+        }
+        .footer-brand span {
+            color: rgba(255,255,255,0.75);
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            margin-left: 4px;
+        }
+
+        /* Diamond divider */
+        .foot-divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.6rem;
+        }
+        .foot-div-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5));
+        }
+        .foot-div-line.r {
+            background: linear-gradient(90deg, rgba(212,175,55,0.5), transparent);
+        }
+        .foot-div-diamond {
+            width: 7px; height: 7px;
+            background: #D4AF37;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        /* Social icons */
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.8rem;
+        }
+        .footer-social-btn {
+            width: 40px; height: 40px;
+            border: 1px solid rgba(212,175,55,0.3);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .footer-social-btn:hover {
+            border-color: #D4AF37;
+            color: #D4AF37;
+            background: rgba(212,175,55,0.08);
+            transform: translateY(-2px);
+        }
+
+        /* Bottom bar */
+        .footer-bottom {
+            border-top: 1px solid rgba(212,175,55,0.12);
+            margin-top: 1.8rem;
+            padding-top: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .footer-copy {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.73rem;
+            color: rgba(255,255,255,0.55);
+            letter-spacing: 0.09em;
+            text-align: center;
+        }
+        .footer-credit {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.05em;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.3rem 0.5rem;
+        }
+        .footer-credit .dev { color: #D4AF37; font-weight: 600; }
+        .footer-credit .sep { color: rgba(212,175,55,0.3); }
+        .footer-wa {
+            color: #4ade80;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 2px 9px;
+            border: 1px solid rgba(74,222,128,0.25);
+            border-radius: 20px;
+            transition: all 0.25s ease;
+            font-size: 0.72rem;
+        }
+        .footer-wa:hover {
+            background: rgba(74,222,128,0.07);
+            border-color: rgba(74,222,128,0.55);
+        }
+        .footer-wa svg { width: 11px; height: 11px; fill: currentColor; }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-white antialiased selection:bg-gold selection:text-white">
@@ -78,7 +225,6 @@
                         Nazee<span class="text-white text-xl ml-1">Textile</span>
                     </a>
                 </div>
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#home" class="text-white hover:text-gold transition-colors text-sm font-medium tracking-wide">Home</a>
                     <a href="#products" class="text-white hover:text-gold transition-colors text-sm font-medium tracking-wide">Collections</a>
@@ -86,7 +232,6 @@
                     <a href="#location" class="text-white hover:text-gold transition-colors text-sm font-medium tracking-wide">Location</a>
                     <a href="#contact" class="px-5 py-2 border-2 border-gold text-gold hover:bg-gold hover:text-royal transition-all duration-300 font-medium rounded-sm">Contact Us</a>
                 </div>
-                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-white hover:text-gold focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
@@ -94,7 +239,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-royal border-t border-gold/20 absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#home" class="block px-3 py-2 text-white hover:text-gold font-medium">Home</a>
@@ -108,13 +252,10 @@
 
     <!-- HERO SECTION -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
-        <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="https://lh3.googleusercontent.com/d/1t66nxY6PxbYj3QqGJ8z_eAyK6qjGK0sG=w1600" alt="Luxury Fabrics" class="w-full h-full object-cover" />
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
-        
-        <!-- Content -->
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto reveal">
             <span class="text-gold font-medium tracking-[0.2em] uppercase text-sm md:text-base mb-4 block">Welcome to Excellence</span>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6">
@@ -137,10 +278,7 @@
                 <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
                 <p class="text-gray-600 max-w-2xl mx-auto">Discover our curated selection of high-quality fabrics, traditional wear, and accessories designed for the modern trendsetter.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                
-                <!-- Product 1: Shoes -->
                 <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://lh3.googleusercontent.com/d/1orPJ66Rn99FJDazVR203LzofdHcdIuX4=w800" onerror="this.src='https://images.unsplash.com/photo-1614252339460-e1ca407945d8?auto=format&fit=crop&w=800&q=80'" alt="Premium Shoes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -149,13 +287,9 @@
                     <div class="p-8 text-center border-t border-gray-100">
                         <h3 class="text-2xl font-serif font-bold text-royal mb-2">Luxury Shoes</h3>
                         <p class="text-gray-600 mb-6 text-sm line-clamp-2">Step out in style with our collection of premium, handcrafted footwear perfect for any occasion.</p>
-                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Shoes" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Shoes" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">Order on WhatsApp</a>
                     </div>
                 </div>
-
-                <!-- Product 2: Shadda -->
                 <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 100ms;">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://lh3.googleusercontent.com/d/14L8KTq05pZFAhlBHfvFgS2lzEKiIXdEM=w800" onerror="this.src='https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80'" alt="Premium Shadda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -164,13 +298,9 @@
                     <div class="p-8 text-center border-t border-gray-100">
                         <h3 class="text-2xl font-serif font-bold text-royal mb-2">Original Shadda</h3>
                         <p class="text-gray-600 mb-6 text-sm line-clamp-2">High-quality brocade fabric with elegant patterns, guaranteed to give you that royal look.</p>
-                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Shadda" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Shadda" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">Order on WhatsApp</a>
                     </div>
                 </div>
-
-                <!-- Product 3: Premium Textiles -->
                 <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 200ms;">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://lh3.googleusercontent.com/d/1t66nxY6PxbYj3QqGJ8z_eAyK6qjGK0sG=w800" onerror="this.src='https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=800&q=80'" alt="Premium Textile Fabrics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -179,13 +309,9 @@
                     <div class="p-8 text-center border-t border-gray-100">
                         <h3 class="text-2xl font-serif font-bold text-royal mb-2">Premium Textiles</h3>
                         <p class="text-gray-600 mb-6 text-sm line-clamp-2">Beautiful, durable, and vibrant fabrics available in various textures and striking colors.</p>
-                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Fabrics" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Fabrics" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">Order on WhatsApp</a>
                     </div>
                 </div>
-
-                <!-- Product 4: Ready Made -->
                 <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 300ms;">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://lh3.googleusercontent.com/d/16ZTnzCmz4Ld5pNll3shUTI0VFzkYZQCB=w800" onerror="this.src='https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=800&q=80'" alt="Ready Made Attire" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -194,13 +320,9 @@
                     <div class="p-8 text-center border-t border-gray-100">
                         <h3 class="text-2xl font-serif font-bold text-royal mb-2">Ready-Made</h3>
                         <p class="text-gray-600 mb-6 text-sm line-clamp-2">Exquisitely tailored traditional and modern wear, ready to be worn for your special events.</p>
-                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Ready-Made%20Attire" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Ready-Made%20Attire" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">Order on WhatsApp</a>
                     </div>
                 </div>
-
-                <!-- Product 5: Caps -->
                 <div class="bg-white rounded-sm overflow-hidden shadow-lg group reveal" style="transition-delay: 400ms;">
                     <div class="relative h-72 overflow-hidden">
                         <img src="https://lh3.googleusercontent.com/d/12ijONCcx4R9sGkMKtIM7P7LzqFN_If1S=w800" onerror="this.src='https://images.unsplash.com/photo-1556306535-0f09a536f01f?auto=format&fit=crop&w=800&q=80'" alt="Traditional Caps" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
@@ -209,36 +331,27 @@
                     <div class="p-8 text-center border-t border-gray-100">
                         <h3 class="text-2xl font-serif font-bold text-royal mb-2">Designer Caps</h3>
                         <p class="text-gray-600 mb-6 text-sm line-clamp-2">Complete your attire with our exclusively embroidered and perfectly fitted traditional caps.</p>
-                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Caps" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/2348131502255?text=Hello%20Nazee%20Textile,%20I%20want%20to%20order%20Caps" target="_blank" class="inline-block w-full py-3 border border-gold text-royal hover:bg-gold hover:text-white transition-colors duration-300 font-medium">Order on WhatsApp</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- CEO SECTION -->
     <section id="ceo" class="py-24 bg-white relative overflow-hidden">
-        <!-- Decorative background elements -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-royal/5 rounded-full blur-3xl -ml-20 -mb-20"></div>
-
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-16">
-                <!-- Image side -->
                 <div class="w-full lg:w-1/2 reveal">
                     <div class="relative group">
-                        <!-- Gold Border Frame -->
                         <div class="absolute inset-0 border-4 border-gold translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
-                        <!-- CEO Image -->
                         <div class="relative z-10 overflow-hidden shadow-2xl">
                              <img src="https://lh3.googleusercontent.com/d/1_WNaEth7NlXKu8oN7vQgBn_CynT_9jhO=w1000" onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80'" alt="Naziru Almustapha - CEO" class="w-full object-cover h-[600px] transition-transform duration-700 group-hover:scale-105">
                         </div>
                     </div>
                 </div>
-                <!-- Text side -->
                 <div class="w-full lg:w-1/2 reveal" style="transition-delay: 200ms;">
                     <div class="flex items-center gap-4 mb-4">
                         <div class="h-[1px] w-12 bg-gold"></div>
@@ -266,36 +379,21 @@
                 <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
                 <p class="text-gray-300 max-w-2xl mx-auto">Experience the luxury of our fabrics firsthand at our flagship location.</p>
             </div>
-
             <div class="flex flex-col lg:flex-row gap-10 bg-white/5 rounded-sm border border-white/10 p-2 md:p-4 reveal">
-                <!-- Text Info -->
                 <div class="w-full lg:w-1/3 p-8 flex flex-col justify-center bg-royal border border-gold/20">
                     <div class="mb-8">
-                        <div class="w-12 h-12 bg-gold/20 flex items-center justify-center rounded-full mb-4 text-gold text-xl">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-gold/20 flex items-center justify-center rounded-full mb-4 text-gold text-xl"><i class="fas fa-map-marker-alt"></i></div>
                         <h3 class="text-xl font-bold mb-2">Address</h3>
                         <p class="text-gray-300 leading-relaxed">Near Mai Kilishi Mosque<br>Talba Mall Shop No 2<br>Sokoto State, Nigeria</p>
                     </div>
                     <div>
-                        <div class="w-12 h-12 bg-gold/20 flex items-center justify-center rounded-full mb-4 text-gold text-xl">
-                            <i class="fas fa-clock"></i>
-                        </div>
+                        <div class="w-12 h-12 bg-gold/20 flex items-center justify-center rounded-full mb-4 text-gold text-xl"><i class="fas fa-clock"></i></div>
                         <h3 class="text-xl font-bold mb-2">Opening Hours</h3>
                         <p class="text-gray-300 uppercase tracking-wide font-medium">Open 10am &bull; Close 10pm<br>Available 24/7</p>
                     </div>
                 </div>
-                <!-- Map Placeholder -->
                 <div class="w-full lg:w-2/3 h-[400px] bg-gray-200">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125439.54419957241!2d5.155700723849313!3d13.047053559389278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11b212f4c34a1a31%3A0x6b83f3e827b4097f!2sSokoto%2C%20Nigeria!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125439.54419957241!2d5.155700723849313!3d13.047053559389278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11b212f4c34a1a31%3A0x6b83f3e827b4097f!2sSokoto%2C%20Nigeria!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -307,31 +405,19 @@
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-royal mb-4">Get In Touch</h2>
             <div class="w-24 h-1 bg-gold mx-auto mb-10"></div>
             <p class="text-gray-600 mb-12 text-lg">Have a question or ready to make a premium order? Reach out to us directly through any of the channels below.</p>
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Call -->
                 <a href="tel:+2348131502255" class="group bg-white p-8 border border-gray-200 hover:border-gold shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="w-16 h-16 mx-auto bg-royal text-gold flex items-center justify-center rounded-full text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fas fa-phone-alt"></i>
-                    </div>
+                    <div class="w-16 h-16 mx-auto bg-royal text-gold flex items-center justify-center rounded-full text-2xl mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fas fa-phone-alt"></i></div>
                     <h3 class="font-bold text-royal mb-2">Call Us</h3>
                     <p class="text-gray-600 font-medium">+234 813 150 2255</p>
                 </a>
-
-                <!-- WhatsApp -->
                 <a href="https://wa.me/2348131502255" target="_blank" class="group bg-white p-8 border border-gray-200 hover:border-[#25D366] shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="w-16 h-16 mx-auto bg-[#25D366] text-white flex items-center justify-center rounded-full text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#25D366]/30">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
+                    <div class="w-16 h-16 mx-auto bg-[#25D366] text-white flex items-center justify-center rounded-full text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-[#25D366]/30"><i class="fab fa-whatsapp"></i></div>
                     <h3 class="font-bold text-royal mb-2">WhatsApp</h3>
                     <p class="text-gray-600 font-medium">Chat with us instantly</p>
                 </a>
-
-                <!-- Instagram -->
                 <a href="https://www.instagram.com/nazee__textile" target="_blank" class="group bg-white p-8 border border-gray-200 hover:border-[#E1306C] shadow-sm hover:shadow-md transition-all duration-300">
-                    <div class="w-16 h-16 mx-auto bg-gradient-to-tr from-[#F56040] via-[#E1306C] to-[#833AB4] text-white flex items-center justify-center rounded-full text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <i class="fab fa-instagram"></i>
-                    </div>
+                    <div class="w-16 h-16 mx-auto bg-gradient-to-tr from-[#F56040] via-[#E1306C] to-[#833AB4] text-white flex items-center justify-center rounded-full text-3xl mb-4 group-hover:scale-110 transition-transform duration-300"><i class="fab fa-instagram"></i></div>
                     <h3 class="font-bold text-royal mb-2">Instagram</h3>
                     <p class="text-gray-600 font-medium">@nazee__textile</p>
                 </a>
@@ -339,32 +425,64 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-royal text-center py-12 border-t-4 border-gold">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="font-serif text-3xl font-bold text-gold tracking-wider uppercase mb-6">
-                Nazee<span class="text-white text-2xl ml-1">Textile</span>
-            </h2>
-            
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://www.instagram.com/nazee__textile" target="_blank" class="text-gray-400 hover:text-gold transition-colors text-2xl">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/2348131502255" target="_blank" class="text-gray-400 hover:text-gold transition-colors text-2xl">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="tel:+2348131502255" class="text-gray-400 hover:text-gold transition-colors text-2xl">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </div>
+    <!-- ══════════════════════════════════════
+         PROFESSIONAL FOOTER
+    ══════════════════════════════════════ -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-frame">
+                <!-- Corner ornaments -->
+                <span class="foot-corner foot-corner-tl"></span>
+                <span class="foot-corner foot-corner-tr"></span>
+                <span class="foot-corner foot-corner-bl"></span>
+                <span class="foot-corner foot-corner-br"></span>
 
-            <div class="w-32 h-[1px] bg-gold mx-auto mb-6"></div>
-            
-            <div class="text-gray-400 font-light text-sm tracking-wide space-y-2">
-                <p>Nazee Textile &copy; 2026. All Rights Reserved.</p>
-                <p class="text-xs opacity-60">Dev by sirajo x 08140905040</p>
-            </div>
-        </div>
+                <!-- Brand -->
+                <div class="footer-brand">
+                    Nazee<span>Textile</span>
+                </div>
+
+                <!-- Diamond divider -->
+                <div class="foot-divider">
+                    <div class="foot-div-line"></div>
+                    <div class="foot-div-diamond"></div>
+                    <div class="foot-div-line r"></div>
+                </div>
+
+                <!-- Tagline -->
+                <p style="text-align:center; font-family:'Montserrat',sans-serif; font-size:0.72rem; color:rgba(255,255,255,0.35); letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.6rem;">
+                    Premium Fabrics &nbsp;&bull;&nbsp; Luxury Fashion &nbsp;&bull;&nbsp; Sokoto
+                </p>
+
+                <!-- Social icons -->
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/nazee__textile" target="_blank" class="footer-social-btn" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/2348131502255" target="_blank" class="footer-social-btn" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="tel:+2348131502255" class="footer-social-btn" title="Call Us">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+
+                <!-- Bottom bar -->
+                <div class="footer-bottom">
+                    <p class="footer-copy">© 2026 Nazee Textile. All Rights Reserved.</p>
+                    <p class="footer-credit">
+                        Website Designed &amp; Developed by
+                        <span class="dev">Sirajo X</span>
+                        <span class="sep">|</span>
+                        <a href="https://wa.me/2348140905040" target="_blank" class="footer-wa">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            WhatsApp: 08140905040
+                        </a>
+                    </p>
+                </div>
+
+            </div><!-- /footer-frame -->
+        </div><!-- /footer-container -->
     </footer>
 
     <!-- FLOATING WHATSAPP BUTTON -->
@@ -372,41 +490,21 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPTS -->
     <script>
-        // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
-        // Scroll Reveal Animation
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // threshold
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
+            document.querySelectorAll(".reveal").forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100)
+                    el.classList.add("active");
+            });
         }
         window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
+        reveal();
 
-        // Navbar background on scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -420,4 +518,3 @@
     </script>
 </body>
 </html>
-
